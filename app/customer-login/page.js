@@ -1,0 +1,3 @@
+'use client'
+import {useState} from 'react'
+export default function CustomerLogin(){const[name,setName]=useState(''),[phone,setPhone]=useState('');function submit(e){e.preventDefault();localStorage.setItem('belaCustomer',JSON.stringify({name,phone}));alert('تم حفظ بيانات العميل');window.location.href='/'}return <main className="login-page"><form className="login-card" onSubmit={submit}><h1>تسجيل دخول العميل</h1><input className="input" placeholder="الاسم" value={name} onChange={e=>setName(e.target.value)}/><input className="input" placeholder="رقم الموبايل" value={phone} onChange={e=>setPhone(e.target.value)}/><button className="primary">متابعة</button></form></main>}
